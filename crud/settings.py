@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["django-intro-chelseashin.c9users.io"]
 
 INSTALLED_APPS = [
     'boards.apps.BoardsConfig',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

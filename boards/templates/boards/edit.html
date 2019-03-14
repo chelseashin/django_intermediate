@@ -2,7 +2,12 @@
 {% block body %}
     <h1>EDIT</h1>
     <hr>
-    <form action="{% url 'boards:update' board.pk %}" method="POST">
+    <!--방법 1-->
+    <!--<form action="{% url 'boards:edit' board.pk %}" method="POST">-->
+    <!--방법 2-->
+    <!--<form action="" method="POST">-->
+    <!--방법 3-->
+    <form method="POST">
         {% csrf_token %}
         <label for="title">TITLE</label>
         <input type="text" name="title" id="title" value="{{ board.title }}"/><br>

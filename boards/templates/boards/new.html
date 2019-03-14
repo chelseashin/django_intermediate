@@ -2,7 +2,8 @@
 {% block body %}
     <h1>NEW</h1>
     <hr>
-    <form action="{% url 'boards:create' %}" method="POST">
+    <!-- action 없으면 POST 방식으로 이동하여 Create 수행-->
+    <form method="POST">
         {% csrf_token %}
         <label for="title">TITLE</label>
         <input type="text" name="title" id="title"/><br>

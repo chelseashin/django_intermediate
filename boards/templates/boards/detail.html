@@ -10,5 +10,11 @@
     <!--앱 이름을 설정해주고 url이름을 써줌-->
     <a href="{% url 'boards:index' %}">BACK</a>
     <a href="{% url 'boards:edit' board.pk %}">[수정]</a>
-    <a href="{% url 'boards:delete' board.pk %}" onclick="return confirm('R U SURE?')">[삭제]</a>
+    <!--<a href="{% url 'boards:delete' board.pk %}" onclick="return confirm('R U SURE?')">[삭제]</a>-->
+    
+    <!--버튼 자체를 form으로 바꿈-->
+    <form action="{% url 'boards:delete' board.pk %}" method="POST" style="display: inline" onsubmit="return confirm('R U SURE?');">
+        {% csrf_token %}
+        <input type="submit" value="삭제">
+    </form>
 {% endblock %}
